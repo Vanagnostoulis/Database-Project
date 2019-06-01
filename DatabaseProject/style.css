@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.content{
+  background-image: url("library-pic.jpg");
+  height: 100vw;
+  width: 100vw;
+}
+
+.home{
+  background-image: url("library-pic.jpg");
+  height: 100vw;
+  width: 100vw;
+
+}
+
+.insert-form{
+
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  display: inline-block;
+  padding:20px;
+  height: 25vw;
+  width:50vw;
+  position:relative;
+  background: rgba(204, 204, 204, 0.5);
+  color: blue;
+  overflow-y: scroll;
+
+}
+
+.buttons{
+
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0px;
+  display: block;
+  padding:0px;
+  width:710px;
+  position:relative;
+
+
+}
+
+.update-button{
+  display: inline-block;
+  background-color: green !important;
+}
+
+
+.delete-button{
+  display: inline-block;
+  background-color: red !important;
+}
+
+.insert-button{
+  display: inline-block;
+}
+
+h1{
+  color: black !important;
+}
+
+table {
+  width: 200%;
+  color: black;
+  background-color: black;
+}
+th {
+  background-color: grey;
+  color: white;
+}
+tr {
+  background-color: white;
+  color: black;
+}
