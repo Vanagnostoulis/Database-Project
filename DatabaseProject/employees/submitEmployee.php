@@ -19,9 +19,9 @@
 	//===========================================================
 	// ==================== POST FOR DELETE =====================
 	if ($_POST['submit']== 'deleteEmployee'){
-		
+
 		$eid = $_POST['eid'];
-		
+
 		//check if user exists
 		$sql = "SELECT * FROM Employee where EmpID = '$eid';";
 		$result = $conn->query($sql);
@@ -70,7 +70,7 @@
 				$sql = "UPDATE Permanent_Employee SET ";
 				$sql .= " HiringDate = '$hday' ";
 				$sql .= " WHERE EmpID ='$eid';";
-				if (!($conn->query($sql) === TRUE)){ 
+				if (!($conn->query($sql) === TRUE)){
 					header("refresh:0.5;url=index.php");
 					alert("An error has occured while trying to update permanent employee. Try again");
 				}
@@ -81,7 +81,7 @@
 				$sql .= " ContractNum = '$cnum' ";
 				$changedtem = true;
 				$sql .= " WHERE EmpID ='$eid';";
-				if (!($conn->query($sql) === TRUE)){ 
+				if (!($conn->query($sql) === TRUE)){
 					header("refresh:0.5;url=index.php");
 					alert("An error has occured while trying to update temporary employee. Try again");
 				}
@@ -155,7 +155,7 @@
 				alert("All temporary employess must have a contract number.");
 			}
 			else{
-*	 			$sql = "INSERT INTO Employee(EFirst, ELast, Salary) VALUES ('$fname','$lname','$sal');";
+	 			$sql = "INSERT INTO Employee(EFirst, ELast, Salary) VALUES ('$fname','$lname','$sal');";
 				if ($conn->query($sql) === TRUE){
 					$last_id = $conn->insert_id;
 					if ($emptype == '01'){

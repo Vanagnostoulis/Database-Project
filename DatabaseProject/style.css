@@ -22,17 +22,16 @@ body {
 
 .insert-form{
 
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 8%;
-  margin-bottom: 5%;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 8vw;
+  margin-bottom: 5vw;
   display: inline-block;
   padding:20px;
   height: 25vw;
-  width:50vw;
+  width:60vw;
   position:relative;
   background: rgba(204, 204, 204, 0.5);
-  color: blue;
   overflow-y: scroll;
 
 }
@@ -66,19 +65,51 @@ body {
 }
 
 h1{
+  margin-top: 0vw;
+  margin-bottom: 10vw;
+
   color: black !important;
 }
 
 table {
-  width: 200%;
+  width: 100%;
   color: black;
   background-color: black;
 }
 th {
+  margin-top: 10vw;
   background-color: grey;
+  opacity: 1.0 !important;
   color: white;
+  padding-left: 1vw !important;
 }
 tr {
   background-color: white;
+  opacity: 0.6;
   color: black;
+}
+
+.query_description{
+  background-color: white;
+  opacity: 0.6;
+  color: black;
+}
+
+.query-form{
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 0vw;
+    display: inline-block;
+    padding:20px;
+    height: 25vw;
+    width:60vw;
+    position:relative;
+    background: rgba(204, 204, 204, 0.5);
+    overflow-y: scroll;
+}
+
+.Queries{
+  background-image: url("library-pic.jpg");
+  height: 200vw;
+  width:  100vw;
 }

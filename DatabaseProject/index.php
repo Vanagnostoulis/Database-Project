@@ -21,6 +21,8 @@
           <li><a href="/DatabaseProject/member/index.php">Members</a></li>
           <li><a href="/DatabaseProject/employees/index.php">Employees</a></li>
           <li><a href="/DatabaseProject/borrows/index.php">Borrowing</a></li>
+          <li><a href="/DatabaseProject/views/index.php">Views</a></li>
+          <li><a href="/DatabaseProject/queries/index.php">Queries</a></li>
         </ul>
       </div>
   </nav>

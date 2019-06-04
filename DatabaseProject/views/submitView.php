@@ -17,7 +17,7 @@
 	  die("Connection failed: " . $conn->connect_error);
 	}
 
-	
+
 	//===========================================================
 	// ==================== POST FOR DELETE =====================
 	if ($_POST['submit']== 'deleteView'){
@@ -87,7 +87,7 @@
 					$changed = true;
 				}
 			}
-			if ($bday != ""){ 
+			if ($bday != ""){
 				if ($changed)
 					$sql .= " , MBirthday = '$bday' ";
 				else{
@@ -128,7 +128,7 @@
 	// ==================== POST FOR INSERT =====================
 	if ($_POST['submit']== 'submitView'){
 		//$entityBody = file_get_contents('php://input');
-		// echo $entityBody ."<br>"; 
+		// echo $entityBody ."<br>";
 
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
@@ -158,4 +158,3 @@
 	// ==================== POST FOR INSERT =====================
 	//===========================================================
 ?>
-

@@ -21,14 +21,14 @@
   $sql = "SELECT Title FROM Book ORDER BY Title ASC";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()) {
-    $optionbook .= '<option value = "'.$row['Title'].'">'.$row['Title'].'</option>';  
+    $optionbook .= '<option value = "'.$row['Title'].'">'.$row['Title'].'</option>';
   }
 
   $optionmname = '';
   $sql = "SELECT MFirst,MLast FROM Member ORDER BY MLast ASC";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()) {
-    $optionmname.= '<option value = "'.$row['MFirst'].' '.$row['MLast'].'">'.$row['MFirst'].' '.$row['MLast'].'</option>';  
+    $optionmname.= '<option value = "'.$row['MFirst'].' '.$row['MLast'].'">'.$row['MFirst'].' '.$row['MLast'].'</option>';
   }
 ?>
 
@@ -61,6 +61,8 @@
             <li><a href="/DatabaseProject/member/index.php">Members</a></li>
             <li><a href="/DatabaseProject/employees/index.php">Employees</a></li>
             <li><a href="/DatabaseProject/borrows/index.php">Borrowing</a></li>
+            <li><a href="/DatabaseProject/views/index.php">Views</a></li>
+            <li><a href="/DatabaseProject/queries/index.php">Queries</a></li>
           </ul>
         </div>
     </nav>
@@ -69,13 +71,13 @@
     <div class="content">
       <div class = "insert-form">
 
-        <center><h1>Active borrows</h1></center>
+        <center><h1>Borrowings</h1></center>
 
         <?php
         $sql = "select br.Member_Id, MFirst, MLast, br.ISBN, Title, br.CopyNumber, Borrowing_Day , Returning_Day , Day_Returned from Borrows as br, Book as b, Copies as c, Member as m where m.Member_Id = br.Member_Id and br.ISBN =b.ISBN and c.CopyNumber = br.CopyNumber and c.ISBN =b.ISBN order by MLast asc;";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            echo "<table><tr><th>Member ID</th><th>Name</th><th>ISBN</th><th>Title</th><th>Copy Number</th><th>Borrowing Day</th><th>Returning Day</th><th>Day Returned</th></tr>";
+            echo "<table><tr><th>Member ID</th><th>Name</th><th>ISBN </th><th>Title</th><th>Copy Number</th><th>Borrowing Day</th><th>Returning Day</th><th>Day Returned</th></tr>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "<tr><td>".$row["Member_Id"]."</td><td>".$row["MLast"]." ".$row["MFirst"]."</td><td>".$row["ISBN"]."</td><td>".$row["Title"]."</td><td>".$row["CopyNumber"]."</td><td>".$row["Borrowing_Day"]."</td><td>".$row["Returning_Day"]."</td><td>".$row["Day_Returned"]."</td></tr>";
@@ -90,7 +92,7 @@
         <button type="button" class="update-button btn btn-info btn-lg" data-toggle="modal" data-target="#updateModal">UPDATE</button>
         <button type="button" class="delete-button btn btn-info btn-lg" data-toggle="modal" data-target="#deleteModal">DELETE</button>
       </div>
-  
+
         <div class="modal fade" id="updateModal" role="dialog">
           <div class = "modal-dialog">
             <form class="popup-form" name="Update Borrows" method="post" action="submitBorrows.php"><p></p>
@@ -108,11 +110,11 @@
           <div class="modal fade" id="insertModal" role="dialog">
            <div class = "modal-dialog">
            <form class="popup-form" name="Add Borrows" method="post" action="submitBorrows.php">
-              <font color="blue"> Member </font> 
+              <font color="blue"> Member </font>
                 <select name= "name" value= "">
                   <?php echo $optionmname; ?>
                 </select><p></p>
-              <font color="blue"> Title of the book </font> 
+              <font color="blue"> Title of the book </font>
                 <select name= "title" value= "">
                   <?php echo $optionbook; ?>
                 </select><p></p>
@@ -139,4 +141,3 @@
 
   </body>
 </html>
- 

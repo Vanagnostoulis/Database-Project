@@ -48,6 +48,8 @@
             <li><a href="/DatabaseProject/member/index.php">Members</a></li>
             <li><a href="/DatabaseProject/employees/index.php">Employees</a></li>
             <li><a href="/DatabaseProject/borrows/index.php">Borrowing</a></li>
+            <li><a href="/DatabaseProject/views/index.php">Views</a></li>
+            <li><a href="/DatabaseProject/queries/index.php">Queries</a></li>
           </ul>
         </div>
     </nav>
@@ -71,8 +73,15 @@
         ?>
       </div>
 
+
+      <div class = "buttons">
+        <button type="button" class="insert-button btn btn-info btn-lg" data-toggle="modal" data-target="#insertModal">INSERT</button>
+        <button type="button" class="update-button btn btn-info btn-lg" data-toggle="modal" data-target="#updateModal">UPDATE</button>
+        <button type="button" class="delete-button btn btn-info btn-lg" data-toggle="modal" data-target="#deleteModal">DELETE</button>
+      </div>
+
       <div class = "insert-form">
-        <center><h1> Details of Books (Not updatable View) </h1></center>
+        <center><h1> Details of Books (Non updatable View) </h1></center>
         <?php
         $sql = "select * from DetailsofBooks order by Title;";
         $result = $conn->query($sql);
@@ -87,12 +96,7 @@
         ?>
       </div>
 
-      <div class = "buttons">
-        <button type="button" class="insert-button btn btn-info btn-lg" data-toggle="modal" data-target="#insertModal">INSERT</button>
-        <button type="button" class="update-button btn btn-info btn-lg" data-toggle="modal" data-target="#updateModal">UPDATE</button>
-        <button type="button" class="delete-button btn btn-info btn-lg" data-toggle="modal" data-target="#deleteModal">DELETE</button>
-      </div>
-  
+
         <div class="modal fade" id="updateModal" role="dialog">
           <div class = "modal-dialog">
             <form class="popup-form" name="Update View" method="post" action="submitView.php"><p></p>
@@ -136,4 +140,3 @@
 
   </body>
 </html>
- 
